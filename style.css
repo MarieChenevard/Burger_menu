@@ -49,6 +49,7 @@ nav li{
     list-style: none;
     text-decoration: none;
     color: black;
+    
    
 }
 
@@ -82,13 +83,53 @@ nav li{
     top:-10px;
     left: 0;
 }
+
+.toggleBtn span:after{
+    content:"";
+    background-color:transparent;
+    height: 3px;
+    width:60%;
+    position : absolute;
+    top:-10px;
+    left: 0;
+}
+/* hide the menu content */
 .nav{
     visibility: hidden;
 }
+
 .nav_open{
+    width: 100%;
     float: left;
     transition: 2s;
     visibility: visible;
 
 }
 
+/* to hide the middle lign of the burger */
+.toggleBtn.active span{
+ background-color: transparent;
+}
+/* to surperpose the lignes of the burger */
+.toggleBtn span::before{
+    transform: translateY(-10px);
+}
+.toggleBtn span::after{
+    transform: translateY(10px);
+}
+/* to rotate lignes as a cross X*/
+.toggleBtn.active span::before{
+    width: 100%;
+    transform: translateY(0px) rotateZ(45deg);
+}
+.toggleBtn.active span::after{
+    width: 100%;
+    background-color:white;
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+/* doesn't work */
+.linkStyle.active{
+    color:white;
+    font-size: 30px;
+}
